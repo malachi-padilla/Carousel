@@ -58,9 +58,9 @@ const Carousel = () => {
 
 	const translateMultiply = () => {
 		if (activeIndex > 1) {
-			setTranslate(activeIndex * 105);
+			setTranslate(activeIndex * 108);
 		} else {
-			setTranslate(activeIndex * 100);
+			setTranslate(activeIndex * 108);
 		}
 	};
 

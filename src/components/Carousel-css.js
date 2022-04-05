@@ -7,9 +7,9 @@ export const CarouselContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	padding-top: 2rem;
-	gap: 2rem;
 	overflow: hidden;
 	padding: 1rem;
+	gap: .8rem;
 `;
 
 export const ListingsContainer = styled.div`
@@ -17,6 +17,11 @@ export const ListingsContainer = styled.div`
 	width: 70%;
 	overflow: hidden;
 	padding: 2rem;
+	@media (max-width:800px) {
+		width:100%;
+
+	}
+	
 `;
 export const RightBtnContainer = styled.div`
 	height: 60%;
@@ -31,6 +36,7 @@ export const LeftBtnContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
+
 `;
 
 export const CarouselBtns = styled.div`
@@ -46,6 +52,7 @@ export const CarouselBtns = styled.div`
 	font-size: 1.6rem;
 	cursor: pointer;
 	transition: all 250ms ease-in-out;
+	z-index: 10;
 	:hover {
 		background-color: ${(props) => props.theme.colors.primaryLight};
 		box-shadow: 0px 0px 1px 10px #4895ef66;
@@ -54,7 +61,7 @@ export const CarouselBtns = styled.div`
 	}
 `;
 export const CarouselCard = styled.div`
-	height: 25rem;
+	height: 35rem;
 	width: calc((100% - 4rem) / 3);
 	background-color: ${(props) => props.theme.colors.main};
 	border-radius: 0.4rem;
@@ -67,6 +74,16 @@ export const CarouselCard = styled.div`
 	transition: all 0.5s ease-in-out;
 	transform: translateX(-${(props) => props.translate}%);
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+	backface-visibility: hidden;
+
+
+	@media (max-width:1200px) {
+		width: calc((100% -4rem) / 2);
+	}
+	@media (max-width:800px) {
+		width: calc(100%);
+	}
+
 `;
 
 export const CarouselCardImage = styled.div`
@@ -76,6 +93,19 @@ export const CarouselCardImage = styled.div`
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
+	position: relative;
+	cursor:pointer;
+	:hover{
+		::after{
+		content: "";
+		position:absolute;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0,0,0,0.5);
+	}
+  }
+
+
 `;
 
 export const CarouselCardInfoContainer = styled.div`
